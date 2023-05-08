@@ -1,0 +1,79 @@
+@mixin cover() {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+@mixin font ($fw, $fz, $lh, $color) {
+	font-weight: $fw;
+	font-size: $fz;
+	line-height: $lh;
+	color: $color;
+}
+
+@mixin bg-cover ($url) {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-image: url("#{$url}");
+}
+
+@mixin fill() {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+//BREAKPOINTS DESKTOP FIRST//
+
+@mixin desktop {
+	@media screen and (max-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin laptop {
+	@media screen and (max-width: 992px) {
+		@content;
+	}
+}
+
+@mixin tablets {
+	@media screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin phones {
+	@media screen and (max-width: 480px) {
+		@content;
+	}
+}
+
+//BREAKPOINTS MOBILE FIRST//
+
+@mixin m-desktop {
+	@media screen and (min-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin m-laptop {
+	@media screen and (min-width: 992px) {
+		@content;
+	}
+}
+
+@mixin m-tablets {
+	@media screen and (min-width: 768px) {
+		@content;
+	}
+}
+
+@mixin m-phones {
+	@media screen and (min-width: 480px) {
+		@content;
+	}
+}
